@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.annotation.VisibleForTesting
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.felipeacerbi.shufflesongs.R
 import br.com.felipeacerbi.shufflesongs.common.extension.observe
@@ -23,11 +22,6 @@ class SongsListFragment : Fragment() {
 
     private val songsListViewModel: SongsListViewModelImpl by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        showSplashScreen()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +33,7 @@ class SongsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
         bindViews()
-        send(RequestSongs(resources.getIntArray(R.array.artists_ids)))
+        send(RequestSongs(resources.getIntArray(R.array.artists_ids).toList()))
     }
 
     private fun bindViews() {
@@ -47,13 +41,11 @@ class SongsListFragment : Fragment() {
 
         observe(songsListViewModel.getStateStream()) {
             progress.isVisible = it.showLoading
+            songs_list.isVisible = it.showLoading.not() && it.showError.not()
             songs_list.adapter = SongsAdapter(it.songsList.toMutableList())
-            showError(it.showError, it.errorMessage)
+            error.isVisible = it.showError
+            error_message.text = it.errorMessage
         }
-    }
-
-    private fun send(action: SongsListViewModel.Action) {
-        songsListViewModel.perform(action)
     }
 
     private fun setupToolbar() {
@@ -65,11 +57,10 @@ class SongsListFragment : Fragment() {
         }
     }
 
-    private fun showError(shouldShow: Boolean, message: String) {
-        if(shouldShow) Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    private fun send(action: SongsListViewModel.Action) {
+        songsListViewModel.perform(action)
     }
 
-    private fun showSplashScreen() {
-        findNavController().navigate(R.id.action_listFragment_to_splashFragment)
-    }
+    @VisibleForTesting
+    fun getIdlingResource() = songsListViewModel.getIdlingResource()
 }

@@ -1,7 +1,7 @@
 package br.com.felipeacerbi.shufflesongs.list.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate.SongsListViewState
+import br.com.felipeacerbi.shufflesongs.list.viewstate.SongsListViewState
 
 interface SongsListViewModel {
 
@@ -9,7 +9,7 @@ interface SongsListViewModel {
     fun perform(action: Action)
 
     sealed class Action {
-        data class RequestSongs(val artistsIds: IntArray) : Action()
+        data class RequestSongs(val artistsIds: List<Int>) : Action()
         object Shuffle : Action()
     }
 }

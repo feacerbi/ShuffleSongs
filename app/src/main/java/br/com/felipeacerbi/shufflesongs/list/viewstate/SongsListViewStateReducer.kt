@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate
+package br.com.felipeacerbi.shufflesongs.list.viewstate
 
 import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewStateReducer
 import br.com.felipeacerbi.shufflesongs.list.repository.model.Song

@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.test.espresso.idling.CountingIdlingResource
 import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewState
 import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewStateReducer
 import kotlinx.coroutines.CoroutineScope
@@ -19,14 +20,18 @@ fun <T> LifecycleOwner.observe(liveData: LiveData<T>, action: (t: T) -> Unit): L
     liveData.apply { observe(this@observe, Observer { observable -> observable?.let { action(it) } }) }
 
 fun CoroutineScope.launchSafely(
+    idlingResource: CountingIdlingResource? = null,
     error: (java.lang.Exception) -> Unit = {},
     block: suspend CoroutineScope.() -> Unit
 ) {
     launch {
         try {
+            idlingResource?.increment()
             block.invoke(this)
         } catch (e: Exception) {
             error.invoke(e)
+        } finally {
+            idlingResource?.decrement()
         }
     }
 }

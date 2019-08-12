@@ -10,9 +10,7 @@ import retrofit2.Retrofit
 
 val songsListModule = module {
     single { provideSongsService(get()) }
-
     factory<SongsListRepository> { SongsListRepositoryImpl(get()) }
-
     viewModel { SongsListViewModelImpl(get(), get(), get()) }
 }
 

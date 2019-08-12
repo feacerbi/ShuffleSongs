@@ -31,16 +31,16 @@ class SongsListViewModelTest {
     @MockK
     lateinit var shuffler: SongsShuffler
 
-    private val listsDataSource = FakeListsDataSource
-
-    lateinit var dispatchers: CoroutineDispatchers
-    lateinit var viewModel: SongsListViewModel
+    private lateinit var dispatchers: CoroutineDispatchers
+    private lateinit var listsDataSource: FakeListsDataSource
+    private lateinit var viewModel: SongsListViewModel
 
     @Before
     fun setUp() {
         MockKAnnotations.init(this)
 
         dispatchers = TestDispatchers()
+        listsDataSource = FakeListsDataSource
 
         viewModel = SongsListViewModelImpl(repository, dispatchers, shuffler)
     }
@@ -52,7 +52,7 @@ class SongsListViewModelTest {
         coEvery { repository.requestSongsList(3) } returns listsDataSource.fakeList3
         coEvery { repository.requestSongsList(4) } returns listsDataSource.fakeList4
 
-        viewModel.perform(RequestSongs(intArrayOf(1, 2, 3, 4)))
+        viewModel.perform(RequestSongs(listOf(1, 2, 3, 4)))
 
         coVerify { repository.requestSongsList(1) }
         coVerify { repository.requestSongsList(2) }
@@ -67,7 +67,7 @@ class SongsListViewModelTest {
         coEvery { repository.requestSongsList(3) } returns listsDataSource.fakeList3
         coEvery { repository.requestSongsList(4) } returns listsDataSource.fakeList4
 
-        viewModel.perform(RequestSongs(intArrayOf(1, 2, 3, 4)))
+        viewModel.perform(RequestSongs(listOf(1, 2, 3, 4)))
 
         viewModel.getStateStream().observeForever {
             assertArrayEquals(listsDataSource.fullList.toTypedArray(), it.songsList.toTypedArray())
@@ -79,7 +79,7 @@ class SongsListViewModelTest {
         coEvery { repository.requestSongsList(1) } returns listsDataSource.fullList
         every { shuffler.shuffle(listsDataSource.fullList) } returns listsDataSource.fullShuffledList
 
-        viewModel.perform(RequestSongs(intArrayOf(1)))
+        viewModel.perform(RequestSongs(listOf(1)))
         viewModel.perform(Shuffle)
 
         verify(exactly = 1) { shuffler.shuffle(listsDataSource.fullList) }

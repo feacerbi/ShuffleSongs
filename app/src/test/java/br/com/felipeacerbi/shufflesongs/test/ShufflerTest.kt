@@ -16,9 +16,7 @@ class ShufflerTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private val listsDataSource = FakeListsDataSource
-
-    lateinit var shuffler: SongsShuffler
+    private lateinit var shuffler: SongsShuffler
 
     @Before
     fun setUp() {
@@ -27,7 +25,7 @@ class ShufflerTest {
 
     @Test
     fun `when a list of songs is shuffled should meet the conditions`() {
-        val shuffledList = shuffler.shuffle(listsDataSource.fullList)
+        val shuffledList = shuffler.shuffle(FakeListsDataSource.fullList)
 
         assertTrue(shuffler.checkListConditions(shuffledList))
     }

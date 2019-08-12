@@ -6,31 +6,24 @@ import okhttp3.mockwebserver.MockResponse
 
 class ResponseMocker(
     private val serverTestRule: ServerTestRule? = null,
-    val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
+    private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 ) {
 
     fun mockResponse(
         urlPath: String,
-        statusCode: Int,
         jsonResponse: String
     ) {
         val mockResponse = MockResponse().apply {
-            setResponseCode(statusCode)
+            setResponseCode(STATUS_CODE_SUCCESS)
             setBody(context.resolveJsonPath(jsonResponse))
         }
 
         serverTestRule?.addResponse(urlPath, mockResponse)
     }
 
-    fun mockEmptyResponse(urlPath: String) {
-        val mockResponse = MockResponse().apply {
-            setResponseCode(STATUS_CODE_SUCCESS)
-            setBody("{}")
-        }
-        serverTestRule?.addResponse(urlPath, mockResponse)
-    }
-
-    fun mockErrorResponse(urlPath: String) {
+    fun mockErrorResponse(
+        urlPath: String
+    ) {
         val mockResponse = MockResponse().apply {
             setResponseCode(STATUS_CODE_ERROR)
             setBody("{}")
@@ -40,7 +33,7 @@ class ResponseMocker(
 
     private fun Context.resolveJsonPath(path: String): String {
         val uri = assets.open(path)
-        return uri.readBytes().toString()
+        return String(uri.readBytes())
     }
 
     companion object {

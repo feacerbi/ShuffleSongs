@@ -35,7 +35,7 @@ fun provideDefaultOkhttpClient(interceptor: HttpLoggingInterceptor): OkHttpClien
 
 fun provideRetrofit(client: OkHttpClient): Retrofit {
     return Retrofit.Builder()
-        .baseUrl("https://us-central1-tw-exercicio-mobile.cloudfunctions.net/")
+        .baseUrl(BuildConfig.BASE_URL)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

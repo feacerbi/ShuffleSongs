@@ -25,7 +25,7 @@ class SplashFragment : Fragment() {
 
         lifecycleScope.launch {
             delay(2000)
-            findNavController().popBackStack()
+            findNavController().navigate(R.id.action_splashFragment_to_listFragment)
         }
     }
 }
