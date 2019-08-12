@@ -1,25 +1,27 @@
 package br.com.felipeacerbi.shufflesongs.list.view
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.felipeacerbi.shufflesongs.R
-import br.com.felipeacerbi.shufflesongs.list.view.adapter.SongsAdapter
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.Action.RequestSongs
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.Action.Shuffle
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModelImpl
 import br.com.felipeacerbi.shufflesongs.common.extension.observe
-import kotlinx.android.synthetic.main.activity_main.*
+import br.com.felipeacerbi.shufflesongs.list.view.adapter.SongsAdapter
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.RequestSongs
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.Shuffle
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModelImpl
 import kotlinx.android.synthetic.main.fragment_list.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
-class ListFragment : Fragment() {
+class SongsListFragment : Fragment() {
 
-    private val viewModel: ListViewModel by viewModels<ListViewModelImpl>()
+    private val songsListViewModel: SongsListViewModelImpl by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,50 +32,44 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setupToolbar()
-        bindViews()
         return inflater.inflate(R.layout.fragment_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupToolbar()
+        bindViews()
         send(RequestSongs(resources.getIntArray(R.array.artists_ids)))
     }
 
     private fun bindViews() {
         songs_list.layoutManager = LinearLayoutManager(requireContext())
 
-        observe(viewModel.getStateStream()) {
+        observe(songsListViewModel.getStateStream()) {
             progress.isVisible = it.showLoading
             songs_list.adapter = SongsAdapter(it.songsList.toMutableList())
+            showError(it.showError, it.errorMessage)
         }
     }
 
-    private fun send(action: ListViewModel.Action) {
-        viewModel.perform(action)
+    private fun send(action: SongsListViewModel.Action) {
+        songsListViewModel.perform(action)
     }
 
     private fun setupToolbar() {
-        setHasOptionsMenu(true)
-        requireActivity().toolbar.visibility = View.VISIBLE
+        toolbar.title = getString(R.string.app_name)
+        toolbar.inflateMenu(R.menu.list_menu)
+        toolbar.setOnMenuItemClickListener {
+            if(it.itemId == R.id.action_shuffle) send(Shuffle)
+            true
+        }
+    }
+
+    private fun showError(shouldShow: Boolean, message: String) {
+        if(shouldShow) Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     private fun showSplashScreen() {
         findNavController().navigate(R.id.action_listFragment_to_splashFragment)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.list_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-            R.id.action_shuffle -> {
-                send(Shuffle)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 }

@@ -1,24 +1,27 @@
-package br.com.felipeacerbi.shufflesongs.common
+package br.com.felipeacerbi.shufflesongs.common.util
 
-import br.com.felipeacerbi.shufflesongs.list.model.Song
+import br.com.felipeacerbi.shufflesongs.list.repository.model.Song
 
-class SongsShuffler(
-    private val list: List<Song>
-) {
+class SongsShuffler {
 
-    fun shuffle(newList: List<Song> = list): List<Song> {
-        val shuffledList = newList.shuffled()
+    fun shuffle(newList: List<Song>): List<Song> {
+        var shuffledList = newList.shuffled()
 
-        return if(shuffledList.checkConditions()) shuffledList
-        else shuffle(shuffledList)
+        while(shuffledList.checkConditions().not()) {
+            shuffledList = shuffledList.shuffled()
+        }
+
+        return shuffledList
     }
 
-    private fun List<Song>.checkConditions(): Boolean {
+    private fun List<Song>.checkConditions(): Boolean = checkListConditions(this)
+
+    fun checkListConditions(list: List<Song>): Boolean {
         var isValid = true
 
-        forEachIndexed { index, song ->
-            if(index - 1 >= 0) { if(this[index - 1].artist == song.artist) isValid = false }
-            if(index + 1 < size) { if(this[index + 1].artist == song.artist) isValid = false }
+        list.forEachIndexed { index, song ->
+            if(index - 1 >= 0) { if(list[index - 1].artist == song.artist) isValid = false }
+            if(index + 1 < list.size) { if(list[index + 1].artist == song.artist) isValid = false }
         }
 
         return isValid

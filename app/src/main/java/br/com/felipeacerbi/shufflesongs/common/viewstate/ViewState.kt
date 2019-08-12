@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs.common
+package br.com.felipeacerbi.shufflesongs.common.viewstate
 
 interface ViewState {
 }

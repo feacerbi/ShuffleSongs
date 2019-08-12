@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs.common.dispatchers
+package br.com.felipeacerbi.shufflesongs.common.dispatcher
 
 import kotlinx.coroutines.CoroutineDispatcher
 

@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs
+package br.com.felipeacerbi.shufflesongs.mockwebserver
 
 import android.content.Context
 import androidx.test.platform.app.InstrumentationRegistry

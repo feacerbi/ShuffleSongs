@@ -1,9 +1,9 @@
 package br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate
 
 import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewState
-import br.com.felipeacerbi.shufflesongs.list.model.Song
+import br.com.felipeacerbi.shufflesongs.list.repository.model.Song
 
-data class ListViewState(
+data class SongsListViewState(
     var showLoading: Boolean = false,
     var showError: Boolean = false,
     var errorMessage: String = "",

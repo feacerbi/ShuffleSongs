@@ -1,4 +1,6 @@
-data class Result(
+package br.com.felipeacerbi.shufflesongs.list.service.model
+
+data class SongResponseItem(
     val artistId: Int,
     val artistName: String,
     val artistType: String,

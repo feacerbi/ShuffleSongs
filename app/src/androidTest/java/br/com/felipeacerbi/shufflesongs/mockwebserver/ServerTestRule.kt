@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs
+package br.com.felipeacerbi.shufflesongs.mockwebserver
 
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -11,7 +11,8 @@ class ServerTestRule : TestRule {
     private val mockWebServer: MockWebServer = MockWebServer()
     private val port = 8080
 
-    private val dispatcher = ServerDispatcher().apply { mockWebServer.dispatcher = this }
+    private val dispatcher = ServerDispatcher()
+        .apply { mockWebServer.dispatcher = this }
 
     override fun apply(base: Statement?, description: Description?): Statement {
         return object : Statement() {

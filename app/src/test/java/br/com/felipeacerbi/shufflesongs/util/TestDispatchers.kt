@@ -1,6 +1,6 @@
 package br.com.felipeacerbi.shufflesongs.util
 
-import br.com.felipeacerbi.shufflesongs.common.dispatchers.CoroutineDispatchers
+import br.com.felipeacerbi.shufflesongs.common.dispatcher.CoroutineDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 

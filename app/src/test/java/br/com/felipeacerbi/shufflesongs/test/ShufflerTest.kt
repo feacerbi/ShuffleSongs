@@ -1,13 +1,12 @@
-package br.com.felipeacerbi.shufflesongs.tests
+package br.com.felipeacerbi.shufflesongs.test
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import br.com.felipeacerbi.shufflesongs.common.util.SongsShuffler
 import br.com.felipeacerbi.shufflesongs.util.FakeListsDataSource
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 

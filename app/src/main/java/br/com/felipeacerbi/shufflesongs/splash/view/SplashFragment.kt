@@ -1,14 +1,15 @@
-package br.com.felipeacerbi.shufflesongs.list.view
+package br.com.felipeacerbi.shufflesongs.splash.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import br.com.felipeacerbi.shufflesongs.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment() {
 
@@ -22,12 +23,9 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().toolbar.visibility = View.GONE
-
-        CoroutineScope(Dispatchers.Main + Job()).launch {
+        lifecycleScope.launch {
             delay(2000)
             findNavController().popBackStack()
         }
     }
-
 }

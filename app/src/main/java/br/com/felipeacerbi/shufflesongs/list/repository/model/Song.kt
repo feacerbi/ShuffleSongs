@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs.list.model
+package br.com.felipeacerbi.shufflesongs.list.repository.model
 
 data class Song(
     val name: String,

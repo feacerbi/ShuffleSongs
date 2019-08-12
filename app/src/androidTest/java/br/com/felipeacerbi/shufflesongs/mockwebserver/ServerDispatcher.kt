@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs
+package br.com.felipeacerbi.shufflesongs.mockwebserver
 
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse

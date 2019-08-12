@@ -3,34 +3,35 @@ package br.com.felipeacerbi.shufflesongs.list.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.felipeacerbi.shufflesongs.common.util.SongsShuffler
+import br.com.felipeacerbi.shufflesongs.common.dispatcher.CoroutineDispatchers
 import br.com.felipeacerbi.shufflesongs.common.extension.launchSafely
-import br.com.felipeacerbi.shufflesongs.list.model.Song
-import br.com.felipeacerbi.shufflesongs.list.repository.ListRepository
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.Action
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.Action.RequestSongs
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.Action.Shuffle
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.State
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.ListViewModel.State.*
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate.ListViewState
 import br.com.felipeacerbi.shufflesongs.common.extension.update
-import kotlinx.coroutines.CoroutineDispatcher
+import br.com.felipeacerbi.shufflesongs.common.util.SongsShuffler
+import br.com.felipeacerbi.shufflesongs.list.repository.SongsListRepository
+import br.com.felipeacerbi.shufflesongs.list.repository.model.Song
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.RequestSongs
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.Shuffle
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate.SongsListViewState
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.viewstate.SongsListViewStateReducer.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
-class ListViewModelImpl(
-    private val repository: ListRepository,
-    private val uiDispatcher: CoroutineDispatcher,
-    private val ioDispatcher: CoroutineDispatcher
-) : ViewModel(), ListViewModel, CoroutineScope {
+class SongsListViewModelImpl(
+    private val repository: SongsListRepository,
+    private val dispatchers: CoroutineDispatchers,
+    private val shuffler: SongsShuffler
+) : ViewModel(), SongsListViewModel, CoroutineScope {
 
-    private val state: MutableLiveData<ListViewState> = MutableLiveData(ListViewState())
+    private val state: MutableLiveData<SongsListViewState> = MutableLiveData()
     private val currentList: MutableList<Song> = mutableListOf()
-    private val shuffler: SongsShuffler = SongsShuffler(currentList)
 
-    override fun getStateStream(): MutableLiveData<ListViewState> = state
+    init {
+        state.value = SongsListViewState()
+    }
+
+    override fun getStateStream(): MutableLiveData<SongsListViewState> = state
 
     override fun perform(action: Action) {
         when(action) {
@@ -46,7 +47,7 @@ class ListViewModelImpl(
             currentList.clear()
 
             for(id in ids) {
-                currentList += withContext(ioDispatcher) { repository.requestSongsList(id) }
+                currentList += withContext(dispatchers.io()) { repository.requestSongsList(id) }
             }
 
             state.update(ShowData(currentList))
@@ -54,7 +55,13 @@ class ListViewModelImpl(
     }
 
     private fun shuffleSongs() {
-        state.update(ShowData(shuffler.shuffle()))
+        state.update(ShowLoading)
+
+        launchSafely(::showError) {
+            val shuffledList = withContext(dispatchers.default()) { shuffler.shuffle(currentList) }
+
+            state.update(ShowData(shuffledList))
+        }
     }
 
     private fun showError(exception: Exception) {
@@ -62,5 +69,5 @@ class ListViewModelImpl(
     }
 
     override val coroutineContext: CoroutineContext
-        get() = viewModelScope.coroutineContext + uiDispatcher
+        get() = viewModelScope.coroutineContext + dispatchers.main()
 }

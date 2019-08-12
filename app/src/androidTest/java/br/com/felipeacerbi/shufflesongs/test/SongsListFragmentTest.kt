@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs
+package br.com.felipeacerbi.shufflesongs.test
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -9,11 +9,11 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import br.com.felipeacerbi.shufflesongs.mockwebserver.ResponseMocker.Companion.STATUS_CODE_SUCCESS
+import br.com.felipeacerbi.shufflesongs.R
 import br.com.felipeacerbi.shufflesongs.list.view.SongsListFragment
 import br.com.felipeacerbi.shufflesongs.mockwebserver.ResponseMocker
+import br.com.felipeacerbi.shufflesongs.mockwebserver.ResponseMocker.Companion.STATUS_CODE_SUCCESS
 import br.com.felipeacerbi.shufflesongs.mockwebserver.ServerTestRule
-import io.mockk.impl.annotations.MockK
 import org.hamcrest.core.IsNot.not
 import org.junit.Rule
 import org.junit.Test
@@ -25,9 +25,6 @@ class SongsListFragmentTest {
     @get:Rule
     val serverTestRule = ServerTestRule()
 
-    @MockK
-    lateinit var navController: NavController
-
     @Test
     fun whenFragmentIsOpenListShouldBeVisibleAndProgressNot() {
         setUpSuccessResponse()
@@ -36,7 +33,7 @@ class SongsListFragmentTest {
             SongsListFragment().apply {
                 viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
-                        Navigation.setViewNavController(requireView(), navController)
+                        Navigation.setViewNavController(requireView(), NavController(requireContext()))
                     }
                 }
             }
@@ -48,11 +45,21 @@ class SongsListFragmentTest {
 
     private fun setUpSuccessResponse() {
         val mocker = ResponseMocker(serverTestRule)
-        mocker.mockResponse("lookup?id=909253", STATUS_CODE_SUCCESS, jsonResponse1)
-        mocker.mockResponse("lookup?id=1171421960", STATUS_CODE_SUCCESS, jsonResponse2)
-        mocker.mockResponse("lookup?id=358714030", STATUS_CODE_SUCCESS, jsonResponse3)
-        mocker.mockResponse("lookup?id=1419227", STATUS_CODE_SUCCESS, jsonResponse4)
-        mocker.mockResponse("lookup?id=264111789", STATUS_CODE_SUCCESS, jsonResponse5)
+        mocker.mockResponse("lookup?id=909253", STATUS_CODE_SUCCESS,
+            jsonResponse1
+        )
+        mocker.mockResponse("lookup?id=1171421960", STATUS_CODE_SUCCESS,
+            jsonResponse2
+        )
+        mocker.mockResponse("lookup?id=358714030", STATUS_CODE_SUCCESS,
+            jsonResponse3
+        )
+        mocker.mockResponse("lookup?id=1419227", STATUS_CODE_SUCCESS,
+            jsonResponse4
+        )
+        mocker.mockResponse("lookup?id=264111789", STATUS_CODE_SUCCESS,
+            jsonResponse5
+        )
     }
 
     private fun viewIsVisible(@IdRes id: Int) {

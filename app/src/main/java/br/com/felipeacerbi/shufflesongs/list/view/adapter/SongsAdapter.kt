@@ -4,14 +4,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.felipeacerbi.shufflesongs.R
-import br.com.felipeacerbi.shufflesongs.inflate
-import br.com.felipeacerbi.shufflesongs.list.model.Song
+import br.com.felipeacerbi.shufflesongs.common.extension.inflate
+import br.com.felipeacerbi.shufflesongs.list.repository.model.Song
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.song_item.view.*
 
-class SongsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
+class SongsAdapter(
     private val songsList: MutableList<Song> = mutableListOf()
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return SongViewHolder(parent.inflate(R.layout.song_item))

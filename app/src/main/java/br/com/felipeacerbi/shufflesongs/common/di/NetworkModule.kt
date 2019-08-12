@@ -9,11 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
-
-    single<HttpLoggingInterceptor> { provideHttpLoggingInterceptor() }
-    single<OkHttpClient> { provideDefaultOkhttpClient(get()) }
-    single<Retrofit> { provideRetrofit(get()) }
-
+    single { provideHttpLoggingInterceptor() }
+    single { provideDefaultOkhttpClient(get()) }
+    single { provideRetrofit(get()) }
 }
 
 fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {

@@ -12,14 +12,14 @@ sealed class SongsListViewStateReducer : ViewStateReducer<SongsListViewState> {
     data class ShowError(val exception: Exception) : SongsListViewStateReducer() {
         override val updateView: SongsListViewState.() -> Unit = {
             showLoading = false
-            errorMessage = exception.message ?: "Unknown error"
             showError = true
+            errorMessage = exception.message ?: "Unknown error"
         }
     }
     data class ShowData(val list: List<Song>) : SongsListViewStateReducer() {
         override val updateView: SongsListViewState.() -> Unit = {
-            songsList = list
             showLoading = false
+            songsList = list
         }
     }
 }

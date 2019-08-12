@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">ShuffleSongs</string>
+    <string name="app_name">Shuffle Songs</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="song_details">%s (%s)</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="logo_title_content_description">App name Shuffle Songs</string>
+    <string name="app_logo_content_description">App logo</string>
 </resources>

@@ -1,4 +1,4 @@
-package br.com.felipeacerbi.shufflesongs.common
+package br.com.felipeacerbi.shufflesongs.common.extension
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewState
+import br.com.felipeacerbi.shufflesongs.common.viewstate.ViewStateReducer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -16,7 +18,10 @@ infix fun ViewGroup.inflate(layoutResId: Int): View =
 fun <T> LifecycleOwner.observe(liveData: LiveData<T>, action: (t: T) -> Unit): LiveData<T> =
     liveData.apply { observe(this@observe, Observer { observable -> observable?.let { action(it) } }) }
 
-fun CoroutineScope.launchSafely(error: (java.lang.Exception) -> Unit = {}, block: suspend CoroutineScope.() -> Unit) {
+fun CoroutineScope.launchSafely(
+    error: (java.lang.Exception) -> Unit = {},
+    block: suspend CoroutineScope.() -> Unit
+) {
     launch {
         try {
             block.invoke(this)
@@ -27,7 +32,7 @@ fun CoroutineScope.launchSafely(error: (java.lang.Exception) -> Unit = {}, block
 }
 
 fun <T : ViewState> MutableLiveData<T>.update(reducer: ViewStateReducer<T>) {
-    postValue(value?.apply {
+    value = value?.apply {
         reducer.updateView.invoke(this)
-    })
+    }
 }

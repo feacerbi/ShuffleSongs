@@ -1,22 +1,21 @@
-package br.com.felipeacerbi.shufflesongs.tests
+package br.com.felipeacerbi.shufflesongs.test
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import br.com.felipeacerbi.shufflesongs.common.dispatchers.CoroutineDispatchers
+import br.com.felipeacerbi.shufflesongs.common.dispatcher.CoroutineDispatchers
 import br.com.felipeacerbi.shufflesongs.common.util.SongsShuffler
 import br.com.felipeacerbi.shufflesongs.list.repository.SongsListRepository
-import br.com.felipeacerbi.shufflesongs.list.repository.model.Song
 import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel
-import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.*
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.RequestSongs
+import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModel.Action.Shuffle
 import br.com.felipeacerbi.shufflesongs.list.viewmodel.SongsListViewModelImpl
 import br.com.felipeacerbi.shufflesongs.util.FakeListsDataSource
 import br.com.felipeacerbi.shufflesongs.util.TestDispatchers
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertArrayEquals
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
