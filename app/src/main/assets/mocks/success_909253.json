@@ -1,0 +1,92 @@
+{
+  "resultCount": 6,
+  "results": [
+    {
+      "wrapperType": "artist",
+      "artistType": "Artist",
+      "primaryGenreName": "Rock",
+      "artistName": "John Dollar",
+      "id": 909253
+    },
+    {
+      "artistName": "John Dollar",
+      "wrapperType": "track",
+      "id": 679273550,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Warmth of the Road",
+      "collectionId": 879273553,
+      "trackName": "Warmth of the Road",
+      "country": "USA",
+      "primaryGenreName": "Rock",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fjohn-dollar-antihero.png?alt=media&token=68b89bd6-87c4-4122-9998-dbd33f75f90c",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 909253,
+      "trackTimeMillis": 207679,
+      "collectionName": "Antihero"
+    },
+    {
+      "trackTimeMillis": 207679,
+      "collectionName": "Antihero",
+      "artistName": "John Dollar",
+      "wrapperType": "track",
+      "id": 679273551,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Sound of his Demons",
+      "collectionId": 879273553,
+      "trackName": "Sound of his Demons",
+      "country": "USA",
+      "primaryGenreName": "Rock",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fjohn-dollar-antihero.png?alt=media&token=68b89bd6-87c4-4122-9998-dbd33f75f90c",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 909253
+    },
+    {
+      "trackTimeMillis": 207679,
+      "collectionName": "Antihero",
+      "artistName": "John Dollar",
+      "wrapperType": "track",
+      "id": 679273552,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Broken Vibrations",
+      "collectionId": 879273553,
+      "trackName": "Broken Vibrations",
+      "country": "USA",
+      "primaryGenreName": "Rock",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fjohn-dollar-antihero.png?alt=media&token=68b89bd6-87c4-4122-9998-dbd33f75f90c",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 909253
+    },
+    {
+      "id": 679273553,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Journey of Eternity",
+      "collectionId": 879273553,
+      "trackName": "Journey of Eternity",
+      "country": "USA",
+      "primaryGenreName": "Rock",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fjohn-dollar-antihero.png?alt=media&token=68b89bd6-87c4-4122-9998-dbd33f75f90c",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 909253,
+      "trackTimeMillis": 207679,
+      "collectionName": "Antihero",
+      "artistName": "John Dollar",
+      "wrapperType": "track"
+    },
+    {
+      "wrapperType": "track",
+      "id": 679273554,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Late Night Heaven",
+      "collectionId": 879273553,
+      "trackName": "Late Night Heaven",
+      "country": "USA",
+      "primaryGenreName": "Rock",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fjohn-dollar-antihero.png?alt=media&token=68b89bd6-87c4-4122-9998-dbd33f75f90c",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 909253,
+      "trackTimeMillis": 207679,
+      "collectionName": "Antihero",
+      "artistName": "John Dollar"
+    }
+  ]
+}

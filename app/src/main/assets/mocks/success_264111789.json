@@ -1,0 +1,92 @@
+{
+  "resultCount": 6,
+  "results": [
+    {
+      "artistName": "Decimais MC's",
+      "id": 264111789,
+      "wrapperType": "artist",
+      "artistType": "Artist",
+      "primaryGenreName": "Hip-Hop"
+    },
+    {
+      "wrapperType": "track",
+      "id": 479273550,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Rua da Perfeição",
+      "collectionId": 879273553,
+      "trackName": "Rua da Perfeição",
+      "country": "BR",
+      "primaryGenreName": "Hip-Hop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fdecimais-mcs-esquerdista-de-direita.png?alt=media&token=ee330b39-ea99-4c6f-bb62-3229879b0ab4",
+      "releaseDate": "2015-09-01T08:00:00Z",
+      "artistId": 264111789,
+      "trackTimeMillis": 207679,
+      "collectionName": "Esquerdista de Direita",
+      "artistName": "Decimais MC's"
+    },
+    {
+      "country": "BR",
+      "primaryGenreName": "Hip-Hop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fdecimais-mcs-esquerdista-de-direita.png?alt=media&token=ee330b39-ea99-4c6f-bb62-3229879b0ab4",
+      "releaseDate": "2015-09-01T08:00:00Z",
+      "artistId": 264111789,
+      "trackTimeMillis": 207679,
+      "collectionName": "Esquerdista de Direita",
+      "artistName": "Decimais MC's",
+      "wrapperType": "track",
+      "id": 479273551,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Dinheiro, Querido, Dinheiro",
+      "collectionId": 879273553,
+      "trackName": "Dinheiro, Querido, Dinheiro"
+    },
+    {
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Encruzilhada da sua Alma",
+      "collectionId": 879273553,
+      "trackName": "Encruzilhada da sua Alma",
+      "country": "BR",
+      "primaryGenreName": "Hip-Hop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fdecimais-mcs-esquerdista-de-direita.png?alt=media&token=ee330b39-ea99-4c6f-bb62-3229879b0ab4",
+      "releaseDate": "2015-09-01T08:00:00Z",
+      "artistId": 264111789,
+      "trackTimeMillis": 207679,
+      "collectionName": "Esquerdista de Direita",
+      "artistName": "Decimais MC's",
+      "wrapperType": "track",
+      "id": 479273552
+    },
+    {
+      "releaseDate": "2015-09-01T08:00:00Z",
+      "artistId": 264111789,
+      "trackTimeMillis": 207679,
+      "collectionName": "Loucura de Amanhã",
+      "artistName": "Decimais MC's",
+      "wrapperType": "track",
+      "id": 479273553,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Rua da Perfeição",
+      "collectionId": 879273553,
+      "trackName": "Loucura de Amanhã",
+      "country": "BR",
+      "primaryGenreName": "Hip-Hop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fdecimais-mcs-esquerdista-de-direita.png?alt=media&token=ee330b39-ea99-4c6f-bb62-3229879b0ab4"
+    },
+    {
+      "trackTimeMillis": 207679,
+      "collectionName": "",
+      "artistName": "Decimais MC's",
+      "wrapperType": "track",
+      "id": 479273554,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Plano de Deus",
+      "collectionId": 879273553,
+      "trackName": "Plano de Deus",
+      "country": "BR",
+      "primaryGenreName": "Hip-Hop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fdecimais-mcs-esquerdista-de-direita.png?alt=media&token=ee330b39-ea99-4c6f-bb62-3229879b0ab4",
+      "releaseDate": "2015-09-01T08:00:00Z",
+      "artistId": 264111789
+    }
+  ]
+}

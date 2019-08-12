@@ -1,0 +1,92 @@
+{
+  "resultCount": 6,
+  "results": [
+    {
+      "wrapperType": "artist",
+      "artistType": "Artist",
+      "primaryGenreName": "Axé",
+      "artistName": "Bloco TótiOQue",
+      "id": 358714030
+    },
+    {
+      "country": "BR",
+      "primaryGenreName": "Axé",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fbloco-totioque-oxe-perda-nam.png?alt=media&token=83523399-83d2-4fb1-8a20-1d75dbb82568",
+      "releaseDate": "2008-07-01T08:00:00Z",
+      "artistId": 358714030,
+      "trackTimeMillis": 207679,
+      "collectionName": "Oxe, perda nam!",
+      "artistName": "Bloco TótiOQue",
+      "wrapperType": "track",
+      "id": 779273550,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Praia dos Rumores",
+      "collectionId": 879273553,
+      "trackName": "Praia dos Rumores"
+    },
+    {
+      "trackTimeMillis": 207679,
+      "collectionName": "Oxe, perda nam!",
+      "artistName": "Bloco TótiOQue",
+      "wrapperType": "track",
+      "id": 779273551,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Trovão do meu Tempo",
+      "collectionId": 879273553,
+      "trackName": "Trovão do meu Tempo",
+      "country": "BR",
+      "primaryGenreName": "Axé",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fbloco-totioque-oxe-perda-nam.png?alt=media&token=83523399-83d2-4fb1-8a20-1d75dbb82568",
+      "releaseDate": "2008-07-01T08:00:00Z",
+      "artistId": 358714030
+    },
+    {
+      "collectionId": 879273553,
+      "trackName": "Promessas Rebeldes",
+      "country": "BR",
+      "primaryGenreName": "Axé",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fbloco-totioque-oxe-perda-nam.png?alt=media&token=83523399-83d2-4fb1-8a20-1d75dbb82568",
+      "releaseDate": "2008-07-01T08:00:00Z",
+      "artistId": 358714030,
+      "trackTimeMillis": 207679,
+      "collectionName": "Oxe, perda nam!",
+      "artistName": "Bloco TótiOQue",
+      "wrapperType": "track",
+      "id": 779273552,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Promessas Rebeldes"
+    },
+    {
+      "id": 779273553,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Memórias dos meus Desejos",
+      "collectionId": 879273553,
+      "trackName": "Memórias dos meus Desejos",
+      "country": "BR",
+      "primaryGenreName": "Axé",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fbloco-totioque-oxe-perda-nam.png?alt=media&token=83523399-83d2-4fb1-8a20-1d75dbb82568",
+      "releaseDate": "2008-07-01T08:00:00Z",
+      "artistId": 358714030,
+      "trackTimeMillis": 207679,
+      "collectionName": "Oxe, perda nam!",
+      "artistName": "Bloco TótiOQue",
+      "wrapperType": "track"
+    },
+    {
+      "releaseDate": "2008-07-01T08:00:00Z",
+      "artistId": 358714030,
+      "trackTimeMillis": 207679,
+      "collectionName": "Oxe, perda nam!",
+      "artistName": "Bloco TótiOQue",
+      "wrapperType": "track",
+      "id": 779273554,
+      "trackExplicitness": "notExplicit",
+      "trackCensoredName": "Sente o Ritmo",
+      "collectionId": 879273553,
+      "trackName": "Sente o Ritmo",
+      "country": "BR",
+      "primaryGenreName": "Axé",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fbloco-totioque-oxe-perda-nam.png?alt=media&token=83523399-83d2-4fb1-8a20-1d75dbb82568"
+    }
+  ]
+}

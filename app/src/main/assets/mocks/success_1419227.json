@@ -1,0 +1,92 @@
+{
+  "resultCount": 6,
+  "results": [
+    {
+      "wrapperType": "artist",
+      "artistType": "Artist",
+      "primaryGenreName": "Pop",
+      "artistName": "MC Arianne",
+      "id": 1419227
+    },
+    {
+      "wrapperType": "track",
+      "id": 879273555,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Boom Boom",
+      "collectionId": 879273552,
+      "trackName": "Boom Boom",
+      "country": "BR",
+      "primaryGenreName": "Pop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fmc-arianne-boom.png?alt=media&token=37a45c0c-f441-4235-9f25-7889ca166553",
+      "releaseDate": "2005-03-01T08:00:00Z",
+      "artistId": 1419227,
+      "trackTimeMillis": 207679,
+      "collectionName": "Boom",
+      "artistName": "MC Arianne"
+    },
+    {
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fmc-arianne-boom.png?alt=media&token=37a45c0c-f441-4235-9f25-7889ca166553",
+      "releaseDate": "2005-03-01T08:00:00Z",
+      "artistId": 1419227,
+      "trackTimeMillis": 207679,
+      "collectionName": "Boom",
+      "artistName": "MC Arianne",
+      "wrapperType": "track",
+      "id": 879273556,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Amor de Anteontem",
+      "collectionId": 879273552,
+      "trackName": "Amor de Anteontem",
+      "country": "BR",
+      "primaryGenreName": "Pop"
+    },
+    {
+      "releaseDate": "2005-03-01T08:00:00Z",
+      "artistId": 1419227,
+      "trackTimeMillis": 207679,
+      "collectionName": "Boom",
+      "artistName": "MC Arianne",
+      "wrapperType": "track",
+      "id": 879273557,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Cosquinhas da sua Alma",
+      "collectionId": 879273552,
+      "trackName": "Cosquinhas da sua Alma",
+      "country": "BR",
+      "primaryGenreName": "Pop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fmc-arianne-boom.png?alt=media&token=37a45c0c-f441-4235-9f25-7889ca166553"
+    },
+    {
+      "collectionId": 879273552,
+      "trackName": "Primavera de um Sonho",
+      "country": "BR",
+      "primaryGenreName": "Pop",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fmc-arianne-boom.png?alt=media&token=37a45c0c-f441-4235-9f25-7889ca166553",
+      "releaseDate": "2005-03-01T08:00:00Z",
+      "artistId": 1419227,
+      "trackTimeMillis": 207679,
+      "collectionName": "Boom",
+      "artistName": "MC Arianne",
+      "wrapperType": "track",
+      "id": 879273558,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Primavera de um Sonho"
+    },
+    {
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fmc-arianne-boom.png?alt=media&token=37a45c0c-f441-4235-9f25-7889ca166553",
+      "releaseDate": "2005-03-01T08:00:00Z",
+      "artistId": 1419227,
+      "trackTimeMillis": 207679,
+      "collectionName": "Boom",
+      "artistName": "MC Arianne",
+      "wrapperType": "track",
+      "id": 879273559,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Sorriso Fantástico",
+      "collectionId": 879273552,
+      "trackName": "Sorriso Fantástico",
+      "country": "BR",
+      "primaryGenreName": "Pop"
+    }
+  ]
+}

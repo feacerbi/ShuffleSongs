@@ -1,0 +1,92 @@
+{
+  "resultCount": 6,
+  "results": [
+    {
+      "wrapperType": "artist",
+      "artistType": "Artist",
+      "primaryGenreName": "Metal",
+      "artistName": "Charlie and the Chewie Humans",
+      "id": 1171421960
+    },
+    {
+      "collectionName": "Epithet",
+      "artistName": "Charlie and the Chewie Humans",
+      "wrapperType": "track",
+      "id": 579273550,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Bomb Secrets",
+      "collectionId": 879273553,
+      "trackName": "Bomb Secrets",
+      "country": "USA",
+      "primaryGenreName": "Metal",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fcharlie-and-the-chewy-humans-epithet.png?alt=media&token=6a1baa1d-dfe1-4cb4-8042-b11de7b26dce",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 1171421960,
+      "trackTimeMillis": 207679
+    },
+    {
+      "wrapperType": "track",
+      "id": 579273551,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Ghosts of Mine",
+      "collectionId": 879273553,
+      "trackName": "Ghosts of Mine",
+      "country": "USA",
+      "primaryGenreName": "Metal",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fcharlie-and-the-chewy-humans-epithet.png?alt=media&token=6a1baa1d-dfe1-4cb4-8042-b11de7b26dce",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 1171421960,
+      "trackTimeMillis": 207679,
+      "collectionName": "Epithet",
+      "artistName": "Charlie and the Chewie Humans"
+    },
+    {
+      "country": "USA",
+      "primaryGenreName": "Metal",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fcharlie-and-the-chewy-humans-epithet.png?alt=media&token=6a1baa1d-dfe1-4cb4-8042-b11de7b26dce",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 1171421960,
+      "trackTimeMillis": 207679,
+      "collectionName": "Epithet",
+      "artistName": "Charlie and the Chewie Humans",
+      "wrapperType": "track",
+      "id": 579273552,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Heartbeat Fire",
+      "collectionId": 879273553,
+      "trackName": "Heartbeat Fire"
+    },
+    {
+      "trackName": "Endless Glory",
+      "country": "USA",
+      "primaryGenreName": "Metal",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fcharlie-and-the-chewy-humans-epithet.png?alt=media&token=6a1baa1d-dfe1-4cb4-8042-b11de7b26dce",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 1171421960,
+      "trackTimeMillis": 207679,
+      "collectionName": "Epithet",
+      "artistName": "Charlie and the Chewie Humans",
+      "wrapperType": "track",
+      "id": 579273553,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Endless Glory",
+      "collectionId": 879273553
+    },
+    {
+      "artistName": "Charlie and the Chewie Humans",
+      "wrapperType": "track",
+      "id": 579273554,
+      "trackExplicitness": "explicit",
+      "trackCensoredName": "Riot!",
+      "collectionId": 879273553,
+      "trackName": "Riot!",
+      "country": "USA",
+      "primaryGenreName": "Metal",
+      "artworkUrl": "https://firebasestorage.googleapis.com/v0/b/tw-exercicio-mobile.appspot.com/o/albums%2Fcharlie-and-the-chewy-humans-epithet.png?alt=media&token=6a1baa1d-dfe1-4cb4-8042-b11de7b26dce",
+      "releaseDate": "2010-07-01T08:00:00Z",
+      "artistId": 1171421960,
+      "trackTimeMillis": 207679,
+      "collectionName": "Epithet"
+    }
+  ]
+}
